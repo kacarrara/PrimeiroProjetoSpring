@@ -42,15 +42,15 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		}
 
 		Professor Professor1 = new Professor();
-		Professor1.setNome("Sandro");
+		Professor1.setNome("Thiago");
 		ProfessorService.salvar(Professor1);
 
 		Professor Professor2 = new Professor();
-		Professor2.setNome("Antonio");
+		Professor2.setNome("Gilberto");
 		ProfessorService.salvar(Professor2);
 
 		Professor Professor3 = new Professor();
-		Professor3.setNome("Junior");
+		Professor3.setNome("Marcos");
 		ProfessorService.salvar(Professor3);
 
 		List<Professor> listaProfessor = ProfessorService.buscarTodosProfessores();

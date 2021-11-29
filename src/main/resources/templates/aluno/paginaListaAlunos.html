@@ -6,7 +6,8 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet"></link>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,8 @@
 
 			<div class="panel-body">
 				<div class="table-responsive">
-					<table class="table table-sm table-striped table-havertable-bordered">
+					<table
+						class="table table-sm table-striped table-havertable-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -27,22 +29,23 @@
 							</tr>
 						</thead>
 						<tbody>
-						   <tr th:each="aluno : ${alunos}">
-						        <td th:text="${aluno.id}"> </td>
-						        <td th:text="${aluno.nome}"> </td>
-						        <td>
-						           <div class="btn-group pull-right">
-						               <a class="btn btn-sm btn=primary">ALTERAR</a>
-					           	       <a class="delete btn btn-sm btn-danger">EXLCUIR</a>
-						           </div>
-						         </td>
-						      </tr>
+							<tr th:each="aluno : ${alunos}">
+								<td th:text="${aluno.id}"></td>
+								<td th:text="${aluno.nome}"></td>
+								<td>
+									<div class="btn-group pull-right">
+										<a class="btn btn-sm btn-primary">ALTERAR</a> <a
+											class="delete btn btn-sm btn-danger">EXLCUIR</a>
+									</div>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
-		<a class="btn tbn-sm btn-success">CADASTRAR NOVO DOCUMENTO</a>
+		<a class="btn tbn-sm btn-success" th:href="@{/aluno/cadastrar}">CADASTRAR
+			NOVO DOCUMENTO</a>
 	</div>
 
 </body>
