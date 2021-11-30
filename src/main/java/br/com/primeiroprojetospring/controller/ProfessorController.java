@@ -3,10 +3,12 @@ package br.com.primeiroprojetospring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.primeiroprojetospring.domain.Aluno;
 import br.com.primeiroprojetospring.domain.Professor;
 import br.com.primeiroprojetospring.service.ProfessorService;
 
@@ -38,5 +40,25 @@ public class ProfessorController {
 		return listaTodosProfessores();
 
 	}
+	@GetMapping ("/alterar{id}")
+	public ModelAndView alterarProfessor(@PathVariable("id") Integer idProfessor) {
+		ModelAndView mView = new ModelAndView("professor/alteraProfessor"); 
+		mView.addObject("professor",  professorService.buscarPorID(idProfessor));
+		return listaTodosProfessores();
+		
+	}
 	
+	
+	@PostMapping ("/alterar")
+	public ModelAndView alterar(Professor professorAlterado) {
+		professorService.salvarAlteracao(professorAlterado);
+		return listaTodosProfessores();
+		
+	}
+	
+	@GetMapping ("/excluir/{id}")
+	public ModelAndView excluirAluno(@PathVariable ("id") Integer id) {
+		professorService.excluir(id);
+		return listaTodosProfessores();
+	}
 }
