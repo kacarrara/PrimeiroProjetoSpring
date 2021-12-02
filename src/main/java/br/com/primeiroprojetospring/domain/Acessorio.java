@@ -8,13 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Aluno implements Serializable {
+public class Acessorio implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -886604392341594251L;
-	public static Object aluno;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;

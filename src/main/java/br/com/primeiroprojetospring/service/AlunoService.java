@@ -14,22 +14,22 @@ import br.com.primeiroprojetospring.repository.AlunoRepository;
 public class AlunoService {
 
 	@Autowired
-	private AlunoRepository alunoRepository;
+	private AlunoRepository AlunoRepository;
 
 	public List<Aluno> buscarTodosAlunos() {
 
-		return alunoRepository.findAll();
+		return AlunoRepository.findAll();
 
 	}
 
 	public Aluno salvar(Aluno aluno) {
 
-		return alunoRepository.save(aluno);
+		return AlunoRepository.save(aluno);
 
 	}
 	
 	public Aluno buscarPorID(Integer id) {
-		Optional<Aluno> aluno = alunoRepository.findById(id);
+		Optional<Aluno> aluno = AlunoRepository.findById(id);
 		return aluno.orElseThrow(()   -> 
 		new ObjectNotFoundException(new Aluno(), "Aluno não encontrado. id: " + id));
 	}
@@ -43,6 +43,8 @@ public class AlunoService {
 	}
 	
 	public void excluir (Integer id) {
-		alunoRepository.deleteById(id);
+		AlunoRepository.deleteById(id);
 	}
+
+	
 }

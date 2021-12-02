@@ -7,7 +7,6 @@ import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.primeiroprojetospring.domain.Aluno;
 import br.com.primeiroprojetospring.domain.Professor;
 import br.com.primeiroprojetospring.repository.ProfessorRepository;
 

@@ -1,26 +1,30 @@
 package br.com.primeiroprojetospring.domain;
 
+
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Aluno implements Serializable {
+public class Fabricante implements Serializable {
+	
+	private static final long serialVersionUID = -955769089251692025L;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -886604392341594251L;
-	public static Object aluno;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 
-
+	@Column(name="NOME_FABRICANTE")
 	private String nome;
+	
+	@Column(name="PAIS_FABRICANTE")
+	private String pais;
 
 	public Integer getId() {
 		return id;
@@ -38,4 +42,19 @@ public class Aluno implements Serializable {
 		this.nome = nome;
 	}
 
+	public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+
+
+	
+	
+	
+	
 }
+
