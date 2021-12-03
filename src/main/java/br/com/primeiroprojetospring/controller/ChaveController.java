@@ -44,7 +44,7 @@ public class ChaveController {
 	@GetMapping("/alterar/{id}")
 	public ModelAndView alterarChave(@PathVariable("id") Integer idChave) {
 		ModelAndView mView = new ModelAndView("chave/alteraChave"); 
-		mView.addObject("chave",  chaveService.buscarPorID(idChave));
+		mView.addObject("chave",  chaveService.buscarChaveID(idChave));
 		return mView;
 		
 	}

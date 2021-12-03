@@ -6,8 +6,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet"></link>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -19,8 +18,7 @@
 
 			<div class="panel-body">
 				<div class="table-responsive">
-					<table
-						class="table table-sm table-striped table-havertable-bordered">
+					<table class="table table-sm table-striped table-havertable-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -29,13 +27,13 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="chave : ${chave}">
+							<tr th:each="chave :${chave}">
 								<td th:text="${chave.id}"></td>
 								<td th:text="${chave.codigo}"></td>
 								<td>
 									<div class="btn-group pull-right">
-										<a class="btn btn-sm btn-primary" th:href="@{/chave/alterar/{idChave}(idChave=${chave.id})}">ALTERAR</a> <a
-											class="delete btn btn-sm btn-danger" th:href="@{/chave/excluir/{idChave}(idChave=${chave.id})}">EXLCUIR</a>
+										<a class="btn btn-sm btn-primary" th:href="@{/chave/alterar/{idChave}(idChave=${chave.id})}">ALTERAR</a>
+										<a class="btn delete btn-sm btn-danger" th:href="@{/chave/excluir/{idChave}(idChave=${chave.id})}">EXCLUIR</a>
 									</div>
 								</td>
 							</tr>
@@ -44,8 +42,8 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn tbn-sm btn-success" th:href="@{/chave/cadastrar}">CADASTRAR
-			NOVO DOCUMENTO</a>
+		<a class="btn tbn-sm btn-success" th:href="@{/chave/cadastrar}">CADASTRAR NOVA CHAVE</a>
 	</div>
 
 </body>
+</html>
