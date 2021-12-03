@@ -44,7 +44,15 @@
 									th:value="${documento.id}" th:text="${documento.id}"></option>
 							</select>
 						</div>
-
+                         
+                         <div class="form-group row">
+							<label>FABRICANTES</label>
+							<select class="form-control" th:field="*{fabricanteCarro}">
+								<option value="">Selecione o fabricante</option>
+								<option th:each="fabricante :${fabricantes}" th:value="${fabricante.id}" th:text="${fabricante.id}"></option>
+							</select>
+						</div>
+						
 						<div class="form-group row">
 							<label>ACESSORIO</label>
 							<div th:each="acessorio : ${acessorios}">

@@ -22,7 +22,7 @@ public class FabricanteController {
 	@GetMapping("/listaFabricantes")
 	public ModelAndView listaTodosFabricantes() {
 		ModelAndView mView = new ModelAndView("fabricante/paginaListaFabricantes");
-		mView.addObject("fabricante", fabricanteService.buscarTodoaFabricantes());
+		mView.addObject("fabricante", fabricanteService.buscarTodosFabricantes());
 		return mView;
 
 	}

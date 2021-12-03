@@ -17,7 +17,7 @@ public class FabricanteService {
 	@Autowired
 	private FabricanteRepository FabricanteRepository;
 	
-	public List<Fabricante> buscarTodoaFabricantes() {
+	public List<Fabricante> buscarTodosFabricantes() {
 
 		return FabricanteRepository.findAll();
 

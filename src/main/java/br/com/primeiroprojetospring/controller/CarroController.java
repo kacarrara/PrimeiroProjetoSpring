@@ -13,62 +13,68 @@ import br.com.primeiroprojetospring.service.AcessorioService;
 import br.com.primeiroprojetospring.service.CarroService;
 import br.com.primeiroprojetospring.service.ChaveService;
 import br.com.primeiroprojetospring.service.DocumentoService;
+import br.com.primeiroprojetospring.service.FabricanteService;
 
 @Controller
 @RequestMapping("carro")
 public class CarroController {
-	
+
 	@Autowired
 	private CarroService carroService;
-	
+
 	@Autowired
 	private ChaveService chaveService;
-	
+
 	@Autowired
 	private DocumentoService documentoService;
-	
+
 	@Autowired
 	private AcessorioService acessorioService;
-	
+
+	@Autowired
+	private FabricanteService fabricanteService;
+
 	@GetMapping("/listaCarros")
-	public ModelAndView  listaTodosCarro() {
+	public ModelAndView listaTodosCarro() {
 		ModelAndView mView = new ModelAndView("carro/paginaListaCarros");
 		mView.addObject("carro", carroService.buscarTodosCarros());
 		return mView;
 	}
-	
+
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastrarCarro() {
 		ModelAndView mView = new ModelAndView("carro/cadastrarCarro");
 		mView.addObject("carro", new Carro());
 		mView.addObject("chaves", chaveService.buscarTodasChaves());
 		mView.addObject("documentos", documentoService.buscarTodosDocumentos());
+		mView.addObject("fabricantes", fabricanteService.buscarTodosFabricantes());
 		mView.addObject("acessorios", acessorioService.buscarTodosAcessorios());
 		return mView;
 	}
-	
+
 	@PostMapping("/salvar")
 	public ModelAndView salvarCarro(Carro carro) {
 		carroService.salvar(carro);
 		return listaTodosCarro();
 	}
-	
+
 	@GetMapping("/alterar/{id}")
 	public ModelAndView alteraCarro(@PathVariable("id") Integer idCarro) {
 		ModelAndView mView = new ModelAndView("carro/alterarCarro");
-		mView.addObject("carro", carroService.buscarCarroID(idCarro));	
+		mView.addObject("carro", carroService.buscarCarroID(idCarro));
 		mView.addObject("chaves", chaveService.buscarTodasChaves());
 		mView.addObject("documentos", documentoService.buscarTodosDocumentos());
+		mView.addObject("fabricantes", fabricanteService.buscarTodosFabricantes());
 		mView.addObject("acessorios", acessorioService.buscarTodosAcessorios());
 		return mView;
 	}
-	
+
 	@PostMapping("/alterar")
 	public ModelAndView alterar(Carro carroAlterado) {
 		carroService.salvarAlteracao(carroAlterado);
 		return listaTodosCarro();
 	}
-	
+
 	@GetMapping("/excluir/{id}")
 	public ModelAndView excluir(@PathVariable("id") Integer id) {
 		carroService.excluir(id);
