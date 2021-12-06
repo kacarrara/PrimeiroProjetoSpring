@@ -46,4 +46,9 @@ public class DocumentoService {
 	public void excluir(Integer id) {
 		DocumentoRepository.deleteById(id);
 	}
+
+	public Object buscarDocumentoID(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}

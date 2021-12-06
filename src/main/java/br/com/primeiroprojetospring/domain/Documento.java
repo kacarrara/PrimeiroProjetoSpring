@@ -50,6 +50,11 @@ public class Documento implements Serializable {
 		this.nome = nome;
 	}
 
+	public Documento salvarAlteracao(Documento documento) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	
