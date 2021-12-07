@@ -25,6 +25,9 @@ public class AcessorioController {
 	@Autowired
 	private AcessorioService acessorioService;
 
+	
+	
+	
 	@PostMapping("/cadastrarAcessorio")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Acessorio> cadastrarAcessorioAPI(@RequestBody Acessorio acessorio){
