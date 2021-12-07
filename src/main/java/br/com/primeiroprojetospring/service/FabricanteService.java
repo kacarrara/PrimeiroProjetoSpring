@@ -15,22 +15,22 @@ import br.com.primeiroprojetospring.repository.FabricanteRepository;
 public class FabricanteService {
 	
 	@Autowired
-	private FabricanteRepository FabricanteRepository;
+	private FabricanteRepository fabricanteRepository;
 	
 	public List<Fabricante> buscarTodosFabricantes() {
 
-		return FabricanteRepository.findAll();
+		return fabricanteRepository.findAll();
 
 	}
 
 	public Fabricante salvar(Fabricante fabricante) {
 
-		return FabricanteRepository.save(fabricante);
+		return fabricanteRepository.save(fabricante);
 
 	}
 	
 	public Fabricante buscarPorID(Integer id) throws ObjectNotFoundException {
-		Optional<Fabricante> fabricante = FabricanteRepository.findById(id);
+		Optional<Fabricante> fabricante = fabricanteRepository.findById(id);
 		return fabricante.orElseThrow(()   -> 
 		new ObjectNotFoundException((Serializable) new Fabricante(), "Fabricante não encontrado. id: " + id));
 	}
@@ -44,6 +44,6 @@ public class FabricanteService {
 	}
 	
 	public void excluir(Integer id) {
-		FabricanteRepository.deleteById(id);
+		fabricanteRepository.deleteById(id);
 	}
 	}

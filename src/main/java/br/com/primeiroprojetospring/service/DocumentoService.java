@@ -15,22 +15,22 @@ import br.com.primeiroprojetospring.repository.DocumentoRepository;
 public class DocumentoService {
 	
 	@Autowired
-	private DocumentoRepository DocumentoRepository;
+	private DocumentoRepository documentoRepository;
 	
 	public List<Documento> buscarTodosDocumentos() {
 
-		return DocumentoRepository.findAll();
+		return documentoRepository.findAll();
 
 	}
 
 	public Documento salvar(Documento documento) {
 
-		return DocumentoRepository.save(documento);
+		return documentoRepository.save(documento);
 
 	}
 	
 	public Documento buscarPorID(Integer id) throws ObjectNotFoundException {
-		Optional<Documento> documento = DocumentoRepository.findById(id);
+		Optional<Documento> documento = documentoRepository.findById(id);
 		return documento.orElseThrow(()   -> 
 		new ObjectNotFoundException((Serializable) new Documento(), "Documento não encontrado. id: " + id));
 	}
@@ -44,7 +44,7 @@ public class DocumentoService {
 	}
 	
 	public void excluir(Integer id) {
-		DocumentoRepository.deleteById(id);
+		documentoRepository.deleteById(id);
 	}
 
 	public Object buscarDocumentoID(Integer id) {
