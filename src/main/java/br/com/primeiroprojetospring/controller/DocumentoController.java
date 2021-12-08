@@ -25,6 +25,12 @@ public class DocumentoController {
 	@Autowired
 	private DocumentoService documentoService;
 	
+	@GetMapping("/findByNomeAndCodigo/{nome}/{codigo}")
+	public ResponseEntity<List<Documento>> findByNomeAndCodigo(@PathVariable("nome") String nome,
+			@PathVariable("codigo") String codigo) {
+		return ResponseEntity.ok().body(documentoService.findByNomeAndCodigo(nome, codigo));
+	}
+	
 	
 	@PostMapping("/cadastrarDocumento")
 	@ResponseStatus(HttpStatus.CREATED)

@@ -8,6 +8,9 @@ import br.com.primeiroprojetospring.domain.Chave;
 @Repository
 public interface ChaveRepository extends JpaRepository<Chave, Integer>{
 
+
+
+
 	
 	
 }

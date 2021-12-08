@@ -7,6 +7,8 @@ import br.com.primeiroprojetospring.domain.Fabricante;
 
 @Repository
 public interface FabricanteRepository extends JpaRepository<Fabricante, Integer>{
+
+	
 	
  
 }

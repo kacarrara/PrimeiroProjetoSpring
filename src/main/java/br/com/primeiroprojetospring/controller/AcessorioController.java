@@ -25,8 +25,11 @@ public class AcessorioController {
 	@Autowired
 	private AcessorioService acessorioService;
 
-	
-	
+	@GetMapping("/findByNome/{nome}")
+	public ResponseEntity<List<Acessorio>> findByNome(@PathVariable("nome") String nome) {
+		return ResponseEntity.ok().body(acessorioService.findByNome(nome));
+	}
+		
 	
 	@PostMapping("/cadastrarAcessorio")
 	@ResponseStatus(HttpStatus.CREATED)

@@ -1,5 +1,7 @@
 package br.com.primeiroprojetospring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import java.util.List;
+
 import br.com.primeiroprojetospring.domain.Aluno;
 import br.com.primeiroprojetospring.service.AlunoService;
 
@@ -24,10 +26,14 @@ public class AlunoController {
 	@Autowired
 	private AlunoService alunoService;
 	
+	
+	
+	
 	@GetMapping("/find/{id}")
 	public ResponseEntity<Aluno> find(@PathVariable("id") Integer id){
 		return ResponseEntity.ok().body(alunoService.buscarPorID(id));
 	}
+	
 	
 	@DeleteMapping("/excluirAluno/{id}")
 	public ResponseEntity<Void> excluir(@PathVariable("id") Integer id) {

@@ -25,6 +25,13 @@ public class FabricanteController {
 	@Autowired
 	private FabricanteService fabricanteService;
 
+	
+	@GetMapping("/findByPais/{pais}")
+	public ResponseEntity<List<Fabricante>> findByPais(@PathVariable("pais") String pais) {
+		return ResponseEntity.ok().body(fabricanteService.findByPais(pais));
+	}
+	
+	
 	@PostMapping("/cadastrarFabricante")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Fabricante> cadastrarFabricanteAPI(@RequestBody Fabricante fabricante) {

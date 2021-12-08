@@ -25,6 +25,11 @@ public class ChaveController {
 	@Autowired
 	private ChaveService chaveService;
 
+	@GetMapping("/findByCodigo/{codigo}")
+	public ResponseEntity<List<Chave>> findByCodigo(@PathVariable("codigo") String codigo) {
+		return ResponseEntity.ok().body(chaveService.findByCodigo(codigo));
+	}
+	
 	
 	@PostMapping("/cadastrarChave")
 	@ResponseStatus(HttpStatus.CREATED)
