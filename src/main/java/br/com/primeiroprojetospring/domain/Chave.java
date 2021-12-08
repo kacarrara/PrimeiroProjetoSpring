@@ -8,8 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 
 @Entity
+@Data
 public class Chave implements Serializable {
 	
 	/**
@@ -27,41 +30,7 @@ public class Chave implements Serializable {
 	private String codigo;
 
 
-	public Integer getId() {
-		return id;
-	}
 
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-
-	public Object getNome() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public void setNome(Object nome) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 	

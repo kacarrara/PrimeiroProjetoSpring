@@ -44,14 +44,14 @@ public class CarroController {
 	private FabricanteService fabricanteService;
 
 
-	@GetMapping("/findByCarroForFabricanteId/{id}")
-	public ResponseEntity<List<Carro>> findByCarroForFabricanteId(@PathVariable("id") Fabricante id) {
-		return ResponseEntity.ok().body(carroService.findByCarroForFabricanteId(id));
+	@GetMapping("/buscarCarroPorIdFabricante/{id}")
+	public ResponseEntity<List<Carro>> findByCarroForFabricanteId(@PathVariable("id") Integer idFabricante) {
+		return ResponseEntity.ok().body(carroService.buscarCarroPorIdFabricante(idFabricante));
 	}
 	
-	@GetMapping("/findByCarroForDocumentoId/{id}")
-	public ResponseEntity<List<Carro>> findByCarroForDocumentoId(@PathVariable("id") Documento id) {
-		return ResponseEntity.ok().body(carroService.findByCarroForDocumentoId(id));
+	@GetMapping("/buscarCarroPorIdDocumento/{id}")
+	public ResponseEntity<List<Carro>> findByCarroForDocumentoId(@PathVariable("id") Integer idDocumento) {
+		return ResponseEntity.ok().body(carroService.buscarCarroPorIdDocumento(idDocumento));
 	}
 	
 	@PostMapping("/cadastrarCarro")

@@ -14,7 +14,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Carro implements Serializable {
 	
 	private static final long serialVersionUID = 1864937557027431368L;
@@ -47,55 +50,6 @@ public class Carro implements Serializable {
 	
 	
 	
-	
-	
-	public Fabricante getFabricanteCarro() {
-		return fabricanteCarro;
-	}
-
-	public void setFabricanteCarro(Fabricante fabricanteCarro) {
-		this.fabricanteCarro = fabricanteCarro;
-	}
-
-	public List<Acessorio> getAcessorios() {
-		return acessorios;
-	}
-
-	public void setAcessorios(List<Acessorio> acessorios) {
-		this.acessorios = acessorios;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-
-	public Chave getChaveCarro() {
-		return chaveCarro;
-	}
-
-	public void setChaveCarro(Chave chaveCarro) {
-		this.chaveCarro = chaveCarro;
-	}
-
-	public Documento getDocumentoCarro() {
-		return documentoCarro;
-	}
-
-	public void setDocumentoCarro(Documento documentoCarro) {
-		this.documentoCarro = documentoCarro;
-	}
 
 	
 

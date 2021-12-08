@@ -3,20 +3,12 @@ package br.com.primeiroprojetospring.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
-
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.querydsl.jpa.impl.JPAQueryFactory;
-
+import br.com.primeiroprojetospring.dao.CarroDAO;
 import br.com.primeiroprojetospring.domain.Carro;
-import br.com.primeiroprojetospring.domain.Documento;
-import br.com.primeiroprojetospring.domain.Fabricante;
-import br.com.primeiroprojetospring.domain.QCarro;
-import br.com.primeiroprojetospring.domain.QDocumento;
-import br.com.primeiroprojetospring.domain.QFabricante;
 import br.com.primeiroprojetospring.repository.CarroRepository;
 
 @Service
@@ -24,10 +16,11 @@ public class CarroService {
 
 	@Autowired
 	private CarroRepository carroRepository;
-
-	@Autowired
-	private EntityManager entityManager;
 	
+	
+	@Autowired
+	private CarroDAO carroDAO;
+
 	public List<Carro> buscarTodosCarros() {
 		return carroRepository.findAll();
 	}
@@ -56,27 +49,12 @@ public class CarroService {
 		carroRepository.deleteById(id);
 	}
 	
-	public List<Carro> findByCarroForFabricanteId(Fabricante id) {
-		QFabricante fabricante = QFabricante.fabricante;
-		QCarro carro = QCarro.carro;
-		
-		
-		return new JPAQueryFactory(entityManager).selectFrom(carro)
-				.innerJoin(carro.fabricanteCarro, fabricante)
-				 .where(carro.fabricanteCarro.eq(id)).fetch();
-	
-	
+	public List<Carro> buscarCarroPorIdFabricante(Integer idFabricante) {
+		return carroDAO.buscarCarroPorIdFabricante(idFabricante);
 	}
 	
-	public List<Carro> findByCarroForDocumentoId(Documento id) {
-		QDocumento documento = QDocumento.documento;
-		QCarro carro = QCarro.carro;
-		
-		
-		return new JPAQueryFactory(entityManager).selectFrom(carro)
-				.innerJoin(carro.documentoCarro, documento)
-				 .where(carro.documentoCarro.eq(id)).fetch();
 	
-	
+	public List<Carro> buscarCarroPorIdDocumento(Integer idDocumento) {
+		return carroDAO.buscarCarroPorIdDocumento(idDocumento);
 	}
 }
