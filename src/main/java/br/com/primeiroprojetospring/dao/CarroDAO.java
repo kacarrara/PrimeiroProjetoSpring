@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
@@ -12,6 +13,7 @@ import br.com.primeiroprojetospring.domain.Acessorio;
 import br.com.primeiroprojetospring.domain.Carro;
 import br.com.primeiroprojetospring.domain.QCarro;
 
+@Repository
 public class CarroDAO {
 
 	private final String TETO_SOLAR = "TETO SOLAR";

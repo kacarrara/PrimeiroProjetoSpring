@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.primeiroprojetospring.domain.Carro;
-import br.com.primeiroprojetospring.domain.Documento;
-import br.com.primeiroprojetospring.domain.Fabricante;
 import br.com.primeiroprojetospring.service.AcessorioService;
 import br.com.primeiroprojetospring.service.CarroService;
 import br.com.primeiroprojetospring.service.ChaveService;
