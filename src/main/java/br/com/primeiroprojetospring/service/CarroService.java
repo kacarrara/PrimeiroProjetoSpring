@@ -57,4 +57,8 @@ public class CarroService {
 	public List<Carro> buscarCarroPorIdDocumento(Integer idDocumento) {
 		return carroDAO.buscarCarroPorIdDocumento(idDocumento);
 	}
+
+	public List<Carro> buscarCarrosComTetoSolar() {
+		return carroDAO.buscarCarrosComTetoSolar();
+	}
 }

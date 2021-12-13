@@ -40,4 +40,11 @@ public class CarroDAO {
 				.where(carro.acessorios.any().nome.equalsIgnoreCase(TETO_SOLAR))
 				.fetch();
 	}
+
+	public List<Carro> buscarCarrosComTetoSolar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
