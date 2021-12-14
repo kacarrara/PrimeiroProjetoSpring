@@ -93,7 +93,7 @@ public class CarroController {
 	}
 
 	@GetMapping("/cadastrar")
-	@PreAuthorize("hasRole('INSERT')")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ModelAndView cadastrarCarro() {
 		ModelAndView mView = new ModelAndView("carro/cadastrarCarro");
 		mView.addObject("carro", new Carro());

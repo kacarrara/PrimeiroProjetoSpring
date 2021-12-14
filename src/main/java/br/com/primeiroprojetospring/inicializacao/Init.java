@@ -147,7 +147,7 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
 		carroService.salvar(c2);
 
 		Carro c3 = new Carro();
-		c3.setAcessorios(Arrays.asList(a3));
+		c3.setAcessorios(Arrays.asList(a1));
 		c3.setChaveCarro(chave3);
 		c3.setDocumentoCarro(doc2);
 		c3.setFabricanteCarro(f3);

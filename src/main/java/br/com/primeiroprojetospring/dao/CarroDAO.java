@@ -41,10 +41,8 @@ public class CarroDAO {
 				.fetch();
 	}
 
-	public List<Carro> buscarCarrosComTetoSolar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
+	
 	
 }

@@ -16,26 +16,26 @@ public class CarroService {
 
 	@Autowired
 	private CarroRepository carroRepository;
-	
-	
 	@Autowired
 	private CarroDAO carroDAO;
 
 	public List<Carro> buscarTodosCarros() {
+
 		return carroRepository.findAll();
 	}
 
 	public Carro salvar(Carro carro) {
+
 		return carroRepository.save(carro);
 	}
 
-	public Carro buscarCarroID(Integer id) {
+	public Carro buscarPorID(Integer id) throws ObjectNotFoundException {
 		Optional<Carro> carro = carroRepository.findById(id);
-		return carro.orElseThrow(() -> new ObjectNotFoundException(new Carro(), "Carro não encontrado. Id: " + id));
+		return carro.orElseThrow(() -> new ObjectNotFoundException(new Carro(), "Carro não encontrado. id: " + id));
 	}
 
 	public Carro salvarAlteracao(Carro carroAlterado) throws ObjectNotFoundException {
-		Carro carro = buscarCarroID(carroAlterado.getId());
+		Carro carro = buscarPorID(carroAlterado.getId());
 		carro.setId(carroAlterado.getId());
 		carro.setModelo(carroAlterado.getModelo());
 		carro.setChaveCarro(carroAlterado.getChaveCarro());
@@ -48,17 +48,11 @@ public class CarroService {
 	public void excluir(Integer id) {
 		carroRepository.deleteById(id);
 	}
-	
+
 	public List<Carro> buscarCarroPorIdFabricante(Integer idFabricante) {
 		return carroDAO.buscarCarroPorIdFabricante(idFabricante);
 	}
-	
-	
-	public List<Carro> buscarCarroPorIdDocumento(Integer idDocumento) {
-		return carroDAO.buscarCarroPorIdDocumento(idDocumento);
-	}
-
 	public List<Carro> buscarCarrosComTetoSolar() {
-		return carroDAO.buscarCarrosComTetoSolar();
-	}
+		return carroDAO.buscarCarrosComTetoSolar(null);
+}
 }
